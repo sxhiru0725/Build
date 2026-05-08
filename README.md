@@ -1,6 +1,43 @@
 # Build - Online Study Rooms App
 
-A modern, real-time study room application built with the MERN stack. Build provides a clean, industrial design interface for focused collaboration in virtual study rooms.
+Build is a full stack collaborative study and productivity platform designed to help users create study rooms, manage tasks, use Pomodoro timers, invite friends, track study sessions, and view productivity analytics.
+
+The project includes a React and Vite frontend, a Node.js and Express backend, authentication, protected routes, realtime room features, notifications, admin management, and deployment configuration.
+
+## Features
+
+1. User registration and login
+2. Google authentication support
+3. Protected dashboard routes
+4. Admin dashboard
+5. Study room creation and management
+6. Room invitations
+7. Friends system
+8. Task management
+9. Task comments
+10. Pomodoro timer
+11. Pomodoro presets
+12. Study session tracking
+13. Notifications
+14. Analytics pages
+15. Video call and screen sharing components
+16. User and room management for admins
+
+## Tech Stack
+
+Frontend: React, Vite, TypeScript, Tailwind CSS  
+Backend: Node.js, Express.js  
+Database: MongoDB style models  
+Authentication: JWT and Google OAuth support  
+Realtime features: Socket based room handlers  
+Deployment: Vercel and Render configuration  
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sxhiru0725/Build.git
 
 ## 🏗️ Architecture
 
