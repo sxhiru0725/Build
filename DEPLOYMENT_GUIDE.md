@@ -1,4 +1,4 @@
-# Vora - Deployment Guide
+# Build - Deployment Guide
 
 ## Environment Variables
 

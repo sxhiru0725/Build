@@ -221,7 +221,7 @@ router.get('/users', async (req, res) => {
       query.$or = [
         { name: { $regex: search, $options: 'i' } },
         { email: { $regex: search, $options: 'i' } },
-        { university: { $regex: search, $options: 'i' } },
+        { organization: { $regex: search, $options: 'i' } },
       ];
     }
 
@@ -257,11 +257,11 @@ router.get('/users', async (req, res) => {
 // PATCH /api/admin/users/:userId - Update user
 router.patch('/users/:userId', async (req, res) => {
   try {
-    const { name, university } = req.body;
+    const { name, organization } = req.body;
 
     const updateData = {};
     if (name) updateData.name = name.trim();
-    if (university !== undefined) updateData.university = university?.trim() || null;
+    if (organization !== undefined) updateData.organization = organization?.trim() || null;
 
     const user = await User.findByIdAndUpdate(
       req.params.userId,
@@ -429,14 +429,14 @@ router.delete('/rooms/:roomId', async (req, res) => {
 router.post('/seed-users', async (req, res) => {
   try {
     const sampleUsers = [
-      { name: 'Alex Chen', email: 'alex.demo@vora.test', university: 'MIT' },
-      { name: 'Sarah Johnson', email: 'sarah.demo@vora.test', university: 'Stanford' },
-      { name: 'Mike Rodriguez', email: 'mike.demo@vora.test', university: 'Harvard' },
-      { name: 'Emma Wilson', email: 'emma.demo@vora.test', university: 'Yale' },
-      { name: 'David Kim', email: 'david.demo@vora.test', university: 'Berkeley' },
-      { name: 'Lisa Anderson', email: 'lisa.demo@vora.test', university: 'Princeton' },
-      { name: 'James Brown', email: 'james.demo@vora.test', university: 'Columbia' },
-      { name: 'Maria Garcia', email: 'maria.demo@vora.test', university: 'UCLA' },
+      { name: 'Alex Chen', email: 'alex.demo@vora.test', organization: 'MIT' },
+      { name: 'Sarah Johnson', email: 'sarah.demo@vora.test', organization: 'Stanford' },
+      { name: 'Mike Rodriguez', email: 'mike.demo@vora.test', organization: 'Harvard' },
+      { name: 'Emma Wilson', email: 'emma.demo@vora.test', organization: 'Yale' },
+      { name: 'David Kim', email: 'david.demo@vora.test', organization: 'Berkeley' },
+      { name: 'Lisa Anderson', email: 'lisa.demo@vora.test', organization: 'Princeton' },
+      { name: 'James Brown', email: 'james.demo@vora.test', organization: 'Columbia' },
+      { name: 'Maria Garcia', email: 'maria.demo@vora.test', organization: 'UCLA' },
     ];
 
     const createdUsers = [];

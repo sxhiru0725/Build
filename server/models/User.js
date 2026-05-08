@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
     maxlength: [500, 'Bio cannot exceed 500 characters'],
     default: '',
   },
-  university: {
+  organization: {
     type: String,
     trim: true,
     default: null,

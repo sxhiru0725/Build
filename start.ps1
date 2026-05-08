@@ -1,5 +1,5 @@
-# Vora Application Startup Script
-Write-Host "🚀 Starting Vora Application..." -ForegroundColor Cyan
+# Build Application Startup Script
+Write-Host "🚀 Starting Build Application..." -ForegroundColor Cyan
 Write-Host ""
 
 # Check if .env files exist

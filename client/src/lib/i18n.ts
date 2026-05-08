@@ -1,4 +1,4 @@
-// Simple i18n implementation for Vora
+// Simple i18n implementation for Build
 // Languages: en (English), si (Sinhala), ta (Tamil)
 
 type Language = 'en' | 'si' | 'ta';
@@ -45,7 +45,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Profile
     'profile.title': 'Profile',
     'profile.bio': 'Bio',
-    'profile.university': 'University',
+    'profile.organization': 'Organization',
     'profile.timezone': 'Timezone',
     'profile.language': 'Language',
     
@@ -104,7 +104,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Profile
     'profile.title': 'පැතිකඩ',
     'profile.bio': 'ජීවිත කථාව',
-    'profile.university': 'විශ්ව විද්‍යාලය',
+    'profile.organization': 'Organization',
     'profile.timezone': 'වේලා කලාපය',
     'profile.language': 'භාෂාව',
     
@@ -163,7 +163,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Profile
     'profile.title': 'சுயவிவரம்',
     'profile.bio': 'வாழ்க்கை வரலாறு',
-    'profile.university': 'பல்கலைக்கழகம்',
+    'profile.organization': 'Organization',
     'profile.timezone': 'நேர மண்டலம்',
     'profile.language': 'மொழி',
     

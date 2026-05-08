@@ -81,10 +81,10 @@ export function Login() {
     const name = formData.get('name') as string
     const email = formData.get('email') as string
     const password = formData.get('password') as string
-    const university = formData.get('university') as string
+    const organization = formData.get('organization') as string
 
     try {
-      await register(name, email, password, university || undefined)
+      await register(name, email, password, organization || undefined)
       // Only navigate after successful registration
       navigate('/dashboard', { replace: true })
     } catch (err: any) {
@@ -125,7 +125,7 @@ export function Login() {
     <PageContainer className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#FAFAFA] via-white to-[#F8F9FA]">
       <Card className="w-full max-w-md rounded-xl shadow-xl border-gray-200">
         <CardHeader className="space-y-2 text-center">
-          <CardTitle className="text-3xl font-bold text-[#2C2F33]">Welcome to Vora</CardTitle>
+          <CardTitle className="text-3xl font-bold text-[#2C2F33]">Welcome to Build</CardTitle>
           <CardDescription className="text-[#72767D]">
             Sign in to your account to continue
           </CardDescription>
@@ -219,14 +219,14 @@ export function Login() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="register-university" className="text-sm font-medium text-[#2C2F33]">
-                    University (optional)
+                  <label htmlFor="register-organization" className="text-sm font-medium text-[#2C2F33]">
+                    Organization (optional)
                   </label>
                   <Input
-                    id="register-university"
-                    name="university"
+                    id="register-organization"
+                    name="organization"
                     type="text"
-                    placeholder="University name"
+                    placeholder="Organization name"
                     className="rounded-lg"
                   />
                 </div>

@@ -96,7 +96,7 @@ export const usersApi = {
   updateMe: (data: Partial<{
     name: string;
     bio: string;
-    university: string;
+    organization: string;
     timezone: string;
     language: 'en' | 'si' | 'ta';
     avatarUrl: string;

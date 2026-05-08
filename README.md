@@ -1,6 +1,6 @@
-# Vora - Online Study Rooms App
+# Build - Online Study Rooms App
 
-A modern, real-time study room application built with the MERN stack. Vora provides a clean, industrial design interface for students to collaborate in virtual study rooms.
+A modern, real-time study room application built with the MERN stack. Build provides a clean, industrial design interface for focused collaboration in virtual study rooms.
 
 ## 🏗️ Architecture
 
@@ -99,7 +99,7 @@ pnpm build
 ## 📁 Project Structure
 
 ```
-vora/
+build/
 ├── client/                 # Frontend application
 │   ├── src/
 │   │   ├── components/    # React components
@@ -122,7 +122,7 @@ vora/
 
 ## 🎨 Design System
 
-Vora uses an industrial, clean design system with:
+Build uses an industrial, clean design system with:
 
 - **Dark mode** as default (toggle available in header)
 - **Industrial palette**: Slate/stone/gray color scheme
@@ -151,7 +151,7 @@ Vora uses an industrial, clean design system with:
 
 **Public Routes:**
 - `GET /health` - Health check endpoint
-- `POST /api/auth/register` - Register new user (email, password, name, university?)
+- `POST /api/auth/register` - Register new user (email, password, name, organization?)
 - `POST /api/auth/login` - Login user (email, password)
 - `GET /auth/google` - Initiate Google OAuth login
 - `GET /auth/google/callback` - Google OAuth callback
@@ -159,7 +159,7 @@ Vora uses an industrial, clean design system with:
 **Protected Routes (require JWT token):**
 - `GET /api/auth/me` - Get current user profile
 - `GET /api/users/me` - Get user profile
-- `PATCH /api/users/me` - Update user profile (name, university)
+- `PATCH /api/users/me` - Update user profile (name, organization)
 - `GET /api/rooms` - List rooms
 - `POST /api/rooms` - Create room
 - `GET /api/rooms/:id` - Get room details
@@ -233,7 +233,7 @@ Vora uses an industrial, clean design system with:
 The app supports two authentication methods:
 
 1. **Local Authentication (Email/Password)**
-   - Users can register with email, password, name, and optional university
+   - Users can register with email, password, name, and optional organization
    - Passwords are hashed using bcrypt
    - JWT tokens are issued upon successful login/registration
 
@@ -309,4 +309,6 @@ See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for environment variables and c
 ## 📄 License
 
 MIT
+
+Made by sahiru imadith
 

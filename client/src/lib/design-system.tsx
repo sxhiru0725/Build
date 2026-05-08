@@ -1,5 +1,5 @@
 /**
- * Vora Design System
+ * Build Design System
  * Premium Light Theme - Discord-inspired with sophisticated polish
  */
 

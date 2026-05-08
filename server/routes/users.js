@@ -12,7 +12,7 @@ router.use(protect);
 const updateProfileValidation = [
   body('name').optional({ checkFalsy: true }).trim().isLength({ min: 1, max: 100 }).withMessage('Name must be between 1 and 100 characters'),
   body('bio').optional({ checkFalsy: true }).trim().isLength({ max: 500 }).withMessage('Bio cannot exceed 500 characters'),
-  body('university').optional({ checkFalsy: true }).trim().isLength({ max: 200 }).withMessage('University name cannot exceed 200 characters'),
+  body('organization').optional({ checkFalsy: true }).trim().isLength({ max: 200 }).withMessage('Organization name cannot exceed 200 characters'),
   body('timezone').optional({ checkFalsy: true }).trim().isLength({ max: 50 }).withMessage('Timezone cannot exceed 50 characters'),
   body('language').optional().isIn(['en', 'si', 'ta']).withMessage('Language must be en, si, or ta'),
   body('avatarUrl').optional({ checkFalsy: true }).trim().isURL().withMessage('Avatar URL must be a valid URL'),
@@ -41,7 +41,7 @@ router.get('/me', async (req, res) => {
         avatar: user.avatar,
         avatarUrl: user.avatarUrl,
         bio: user.bio,
-        university: user.university,
+        organization: user.organization,
         timezone: user.timezone,
         language: user.language,
         preferences: user.preferences,
@@ -72,7 +72,7 @@ router.patch('/me', updateProfileValidation, async (req, res) => {
       });
     }
 
-    const { name, bio, university, timezone, language, avatarUrl, preferences } = req.body;
+    const { name, bio, organization, timezone, language, avatarUrl, preferences } = req.body;
     const user = await User.findById(req.user._id);
 
     if (!user) {
@@ -84,7 +84,7 @@ router.patch('/me', updateProfileValidation, async (req, res) => {
 
     if (name !== undefined) user.name = name.trim();
     if (bio !== undefined) user.bio = bio ? bio.trim() : '';
-    if (university !== undefined) user.university = university ? university.trim() : null;
+    if (organization !== undefined) user.organization = organization ? organization.trim() : null;
     if (timezone !== undefined) user.timezone = timezone ? timezone.trim() : 'UTC';
     if (language !== undefined) user.language = language;
     if (avatarUrl !== undefined) user.avatarUrl = avatarUrl || null;
@@ -127,7 +127,7 @@ router.patch('/me', updateProfileValidation, async (req, res) => {
         avatar: user.avatar,
         avatarUrl: user.avatarUrl,
         bio: user.bio,
-        university: user.university,
+        organization: user.organization,
         timezone: user.timezone,
         language: user.language,
         preferences: user.preferences,

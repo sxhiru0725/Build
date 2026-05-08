@@ -12,7 +12,7 @@ interface User {
   _id: string;
   name: string;
   email: string;
-  university: string | null;
+  organization: string | null;
   provider: 'local' | 'google';
   createdAt: string;
 }
@@ -25,7 +25,7 @@ export function AdminUsers() {
   const [totalPages, setTotalPages] = useState(1);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [editName, setEditName] = useState('');
-  const [editUniversity, setEditUniversity] = useState('');
+  const [editOrganization, setEditOrganization] = useState('');
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [deletingUserId, setDeletingUserId] = useState<string | null>(null);
@@ -57,7 +57,7 @@ export function AdminUsers() {
   const handleEdit = (user: User) => {
     setEditingUser(user);
     setEditName(user.name);
-    setEditUniversity(user.university || '');
+    setEditOrganization(user.organization || '');
     setIsEditDialogOpen(true);
   };
 
@@ -67,7 +67,7 @@ export function AdminUsers() {
     try {
       await api.patch(`/admin/users/${editingUser._id}`, {
         name: editName,
-        university: editUniversity || null,
+        organization: editOrganization || null,
       });
       toast({
         title: 'Success',
@@ -123,7 +123,7 @@ export function AdminUsers() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
             <Input
-              placeholder="Search users by name, email, or university..."
+              placeholder="Search users by name, email, or organization..."
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);
@@ -158,7 +158,7 @@ export function AdminUsers() {
                     <tr className="border-b border-slate-800">
                       <th className="text-left py-3 px-4 text-sm font-medium text-slate-400">Name</th>
                       <th className="text-left py-3 px-4 text-sm font-medium text-slate-400">Email</th>
-                      <th className="text-left py-3 px-4 text-sm font-medium text-slate-400">University</th>
+                      <th className="text-left py-3 px-4 text-sm font-medium text-slate-400">Organization</th>
                       <th className="text-left py-3 px-4 text-sm font-medium text-slate-400">Provider</th>
                       <th className="text-left py-3 px-4 text-sm font-medium text-slate-400">Created</th>
                       <th className="text-right py-3 px-4 text-sm font-medium text-slate-400">Actions</th>
@@ -169,7 +169,7 @@ export function AdminUsers() {
                       <tr key={user._id} className="border-b border-slate-800/50 hover:bg-slate-800/30">
                         <td className="py-3 px-4 text-white">{user.name}</td>
                         <td className="py-3 px-4 text-slate-300">{user.email}</td>
-                        <td className="py-3 px-4 text-slate-300">{user.university || '-'}</td>
+                        <td className="py-3 px-4 text-slate-300">{user.organization || '-'}</td>
                         <td className="py-3 px-4">
                           <Badge variant="secondary" className="bg-slate-800 text-slate-200">
                             {user.provider}
@@ -254,10 +254,10 @@ export function AdminUsers() {
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-slate-300 mb-2 block">University</label>
+              <label className="text-sm font-medium text-slate-300 mb-2 block">Organization</label>
               <Input
-                value={editUniversity}
-                onChange={(e) => setEditUniversity(e.target.value)}
+                value={editOrganization}
+                onChange={(e) => setEditOrganization(e.target.value)}
                 placeholder="Optional"
                 className="bg-slate-800 border-slate-700 text-white rounded-2xl"
               />

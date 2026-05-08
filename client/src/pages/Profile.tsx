@@ -24,7 +24,7 @@ export function Profile() {
   const [basicInfo, setBasicInfo] = useState({
     name: '',
     bio: '',
-    university: '',
+    organization: '',
     timezone: 'UTC',
     avatarUrl: '',
     language: 'en' as 'en' | 'si' | 'ta',
@@ -57,7 +57,7 @@ export function Profile() {
         setBasicInfo({
           name: userData.name || '',
           bio: userData.bio || '',
-          university: userData.university || '',
+          organization: userData.organization || '',
           timezone: userData.timezone || 'UTC',
           avatarUrl: userData.avatarUrl || '',
           language: userData.language || 'en',
@@ -137,7 +137,7 @@ export function Profile() {
       const response = await usersApi.updateMe({
         name: basicInfo.name,
         bio: basicInfo.bio,
-        university: basicInfo.university,
+        organization: basicInfo.organization,
         timezone: basicInfo.timezone,
         avatarUrl: basicInfo.avatarUrl,
         language: basicInfo.language,
@@ -295,14 +295,14 @@ export function Profile() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="university" className="text-sm font-medium">
-                      University (optional)
+                    <label htmlFor="organization" className="text-sm font-medium">
+                      Organization (optional)
                     </label>
                     <Input
-                      id="university"
-                      value={basicInfo.university}
-                      onChange={(e) => setBasicInfo({ ...basicInfo, university: e.target.value })}
-                      placeholder="University name"
+                      id="organization"
+                      value={basicInfo.organization}
+                      onChange={(e) => setBasicInfo({ ...basicInfo, organization: e.target.value })}
+                      placeholder="Organization name"
                       maxLength={200}
                       className="rounded-2xl"
                       disabled={loading}

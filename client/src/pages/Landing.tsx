@@ -88,7 +88,7 @@ export function Landing() {
       name: 'Sarah Chen',
       role: 'Computer Science Student',
       avatar: '👩‍💻',
-      text: 'Vora transformed how my study group works. The synchronized timers keep us all on track.',
+      text: 'Build transformed how my study group works. The synchronized timers keep us all on track.',
       rating: 5,
     },
     {
@@ -138,7 +138,7 @@ export function Landing() {
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#5865F2] to-[#4752C4] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"></div>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-[#5865F2] via-[#4752C4] to-[#5865F2] bg-clip-text text-transparent bg-[length:200%_100%] animate-shimmer">
-                Vora
+                Build
               </span>
             </Link>
             <div className="flex items-center gap-4">
@@ -253,7 +253,7 @@ export function Landing() {
                   <div className="w-3 h-3 rounded-full bg-green-400/80"></div>
                 </div>
                 <div className="flex-1 mx-4 bg-white rounded-lg px-4 py-2 text-xs text-gray-500 border border-gray-200">
-                  vora.app/study-room
+                  build.app/study-room
                 </div>
               </div>
 
@@ -491,7 +491,7 @@ export function Landing() {
               <span className="bg-gradient-to-r from-[#5865F2] to-[#4752C4] bg-clip-text text-transparent">Everywhere</span>
             </h2>
             <p className="text-xl text-[#72767D] max-w-2xl mx-auto leading-relaxed">
-              See what our community is saying about Vora
+              See what our community is saying about Build
             </p>
           </div>
 
@@ -544,7 +544,7 @@ export function Landing() {
                 Ready to Focus?
               </h2>
               <p className="text-xl md:text-2xl text-[#72767D] mb-10 max-w-2xl mx-auto leading-relaxed">
-                Join thousands of students and professionals who are already using Vora to stay productive and achieve their goals.
+                Join thousands of users who are already using Build to stay productive and achieve their goals.
               </p>
               <Link to={ctaAction}>
                 <Button size="lg" className="group relative bg-gradient-to-r from-[#5865F2] to-[#4752C4] hover:from-[#4752C4] hover:to-[#5865F2] text-white text-xl font-bold px-12 py-8 h-auto shadow-2xl hover:shadow-[0_25px_60px_rgba(88,101,242,0.5)] hover:scale-110 transition-all duration-300 rounded-xl overflow-hidden">
@@ -579,10 +579,10 @@ export function Landing() {
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5865F2] to-[#4752C4] flex items-center justify-center shadow-lg">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-xl font-bold text-[#2C2F33]">Vora</span>
+                <span className="text-xl font-bold text-[#2C2F33]">Build</span>
               </div>
               <p className="text-sm text-[#72767D] leading-relaxed">
-                The modern way to study together and stay focused. Built for students, by students.
+                The modern way to collaborate and stay focused. Made by sahiru imadith.
               </p>
             </div>
             <div>
@@ -614,7 +614,7 @@ export function Landing() {
             </div>
           </div>
           <div className="pt-8 border-t border-gray-200/50 text-center text-sm text-[#72767D]">
-            © {new Date().getFullYear()} Vora. All rights reserved. Built with ❤️ for students everywhere.
+            © {new Date().getFullYear()} Build. All rights reserved. Made by sahiru imadith.
           </div>
         </div>
       </footer>

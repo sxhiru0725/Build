@@ -28,11 +28,11 @@ export const sendRoomInvite = async (to, roomName, roomCode, inviteLink) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to,
-    subject: `You've been invited to join ${roomName} on Vora`,
+    subject: `You've been invited to join ${roomName} on Build`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">Join ${roomName}</h2>
-        <p>You've been invited to join a study room on Vora!</p>
+        <p>You've been invited to join a study room on Build!</p>
         ${roomCode ? `<p><strong>Room Code:</strong> ${roomCode}</p>` : ''}
         <p>
           <a href="${inviteLink}" 
@@ -47,7 +47,7 @@ export const sendRoomInvite = async (to, roomName, roomCode, inviteLink) => {
       </div>
     `,
     text: `
-You've been invited to join ${roomName} on Vora!
+You've been invited to join ${roomName} on Build!
 
 ${roomCode ? `Room Code: ${roomCode}\n` : ''}
 Join the room: ${inviteLink}
@@ -72,11 +72,11 @@ export const sendInviteEmail = async (to, roomName, inviterName, inviteLink) => 
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to,
-    subject: `${inviterName} invited you to join ${roomName} on Vora`,
+    subject: `${inviterName} invited you to join ${roomName} on Build`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">You've been invited!</h2>
-        <p><strong>${inviterName}</strong> invited you to join the study room <strong>${roomName}</strong> on Vora.</p>
+        <p><strong>${inviterName}</strong> invited you to join the study room <strong>${roomName}</strong> on Build.</p>
         <p>
           <a href="${inviteLink}" 
              style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 8px; margin-top: 20px;">
@@ -90,7 +90,7 @@ export const sendInviteEmail = async (to, roomName, inviterName, inviteLink) => 
       </div>
     `,
     text: `
-${inviterName} invited you to join ${roomName} on Vora!
+${inviterName} invited you to join ${roomName} on Build!
 
 Accept the invitation: ${inviteLink}
     `,

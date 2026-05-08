@@ -28,7 +28,7 @@ router.post('/register', registerValidation, async (req, res) => {
       });
     }
 
-    const { name, email, password, university } = req.body;
+    const { name, email, password, organization } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -42,7 +42,7 @@ router.post('/register', registerValidation, async (req, res) => {
       name,
       email,
       password,
-      university: university || null,
+      organization: organization || null,
       provider: 'local',
     });
 
@@ -57,7 +57,7 @@ router.post('/register', registerValidation, async (req, res) => {
         name: user.name,
         email: user.email,
         avatar: user.avatar,
-        university: user.university,
+        organization: user.organization,
         provider: user.provider,
         role: 'user',
       },
@@ -106,7 +106,7 @@ router.post('/login', loginValidation, async (req, res) => {
           name: 'Admin',
           email: adminEmail,
           avatar: null,
-          university: null,
+          organization: null,
           provider: 'local',
           role: 'admin',
           badges: [],
@@ -159,7 +159,7 @@ router.post('/login', loginValidation, async (req, res) => {
         name: user.name,
         email: user.email,
         avatar: user.avatar,
-        university: user.university,
+        organization: user.organization,
         provider: user.provider,
         role: 'user',
       },
@@ -185,7 +185,7 @@ router.get('/me', protect, async (req, res) => {
           name: 'Admin',
           email: adminEmail,
           avatar: null,
-          university: null,
+          organization: null,
           provider: 'local',
           role: 'admin',
           badges: [],
@@ -218,7 +218,7 @@ router.get('/me', protect, async (req, res) => {
         email: user.email,
         avatar: user.avatar,
         avatarUrl: user.avatarUrl,
-        university: user.university,
+        organization: user.organization,
         provider: user.provider,
         createdAt: user.createdAt,
         role,

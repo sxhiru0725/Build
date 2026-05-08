@@ -8,7 +8,7 @@ interface User {
   avatar: string | null;
   avatarUrl?: string | null;
   bio?: string;
-  university: string | null;
+  organization: string | null;
   timezone?: string;
   language?: 'en' | 'si' | 'ta';
   preferences?: {
@@ -42,7 +42,7 @@ interface AuthContextType {
   loading: boolean;
   role: 'user' | 'admin' | null;
   login: (email: string, password: string) => Promise<'user' | 'admin'>;
-  register: (name: string, email: string, password: string, university?: string) => Promise<void>;
+  register: (name: string, email: string, password: string, organization?: string) => Promise<void>;
   logout: () => void;
   setUser: (user: User | null) => void;
 }
@@ -119,8 +119,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     return (role || userData.role || 'user') as 'user' | 'admin';
   };
 
-  const register = async (name: string, email: string, password: string, university?: string) => {
-    const response = await api.post('/auth/register', { name, email, password, university });
+  const register = async (name: string, email: string, password: string, organization?: string) => {
+    const response = await api.post('/auth/register', { name, email, password, organization });
     const { token, user: userData, role } = response.data;
     localStorage.setItem('token', token);
     const userWithRole = { ...userData, role: role || userData.role || 'user' };

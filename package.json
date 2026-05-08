@@ -1,8 +1,8 @@
 {
-  "name": "vora",
+  "name": "build",
   "version": "1.0.0",
   "private": true,
-  "description": "Vora - Online Study Rooms App",
+  "description": "Build - Online Study Rooms App",
   "scripts": {
     "dev": "pnpm -r --parallel dev",
     "dev:client": "pnpm --filter client dev",
