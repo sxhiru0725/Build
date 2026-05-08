@@ -19,9 +19,6 @@ build/
 # =========================
 # Environment variables (VERY IMPORTANT)
 # =========================
-.env
-.env.*
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -50,3 +47,4 @@ Thumbs.db
 *.swp
 *.swo
 *~
+config.bat
